@@ -1,0 +1,56 @@
+MODEL:
+  META_ARCHITECTURE: "GeneralizedRCNN"
+  BACKBONE:
+    NAME: "build_resnet_fpn_backbone"
+  PIXEL_STD: [57.375, 57.120, 58.395]
+  RESNETS:
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+    STRIDE_IN_1X1: False  # this is a C2 model
+    NUM_GROUPS: 32
+    WIDTH_PER_GROUP: 8
+    DEPTH: 101
+  FPN:
+    IN_FEATURES: ["res2", "res3", "res4", "res5"]
+  ANCHOR_GENERATOR:
+    SIZES: [[32], [64], [128], [256], [512]]  # One size for each in feature map
+    ASPECT_RATIOS: [[0.5, 1.0, 2.0]]  # Three aspect ratios (same for all in feature maps)
+  RPN:
+    IN_FEATURES: ["p2", "p3", "p4", "p5", "p6"]
+    PRE_NMS_TOPK_TRAIN: 2000  # Per FPN level
+    PRE_NMS_TOPK_TEST: 1000  # Per FPN level
+    # Detectron1 uses 2000 proposals per-batch,
+    # (See "modeling/rpn/rpn_outputs.py" for details of this legacy issue)
+    # which is approximately 1000 proposals per-image since the default batch size for FPN is 2.
+    POST_NMS_TOPK_TRAIN: 1000
+    POST_NMS_TOPK_TEST: 1000
+  ROI_HEADS:
+    NAME: "StandardROIHeads"
+    IN_FEATURES: ["p2", "p3", "p4", "p5"]
+  ROI_BOX_HEAD:
+    NAME: "FastRCNNConvFCHead"
+    NUM_FC: 2
+    POOLER_RESOLUTION: 7
+  ROI_MASK_HEAD:
+    NAME: "MaskRCNNDCTHead"
+    NUM_CONV: 4
+    POOLER_RESOLUTION: 14
+    CLS_AGNOSTIC_MASK: True
+    DCT_VECTOR_DIM: 300
+    MASK_LOSS_PARA: 0.007
+    MASK_SIZE: 128
+    DCT_LOSS_TYPE: "l1"
+  WEIGHTS: "detectron2://ImageNetPretrained/FAIR/X-101-32x8d.pkl"
+  MASK_ON: True
+DATASETS:
+  TRAIN: ("coco_2017_train",)
+  TEST: ("coco_2017_val",) # "lvis_v0.5_val_cocofied")
+SOLVER:
+  IMS_PER_BATCH: 16
+  BASE_LR: 0.02
+  STEPS: (210000, 250000)
+  MAX_ITER: 270000
+INPUT:
+  MASK_FORMAT: "polygon"
+  MIN_SIZE_TRAIN: (640, 672, 704, 736, 768, 800)
+VERSION: 2
+OUTPUT_DIR: "output/RX101_32x8d_3x_DCT128x128_300_dim_L1_0_007loss_4conv/"

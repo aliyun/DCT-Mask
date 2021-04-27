@@ -1,0 +1,26 @@
+_BASE_: "../Base-RCNN-FPN-DCT.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/FAIR/X-101-32x8d.pkl"
+  MASK_ON: True
+  PIXEL_STD: [57.375, 57.120, 58.395]
+  RESNETS:
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+    STRIDE_IN_1X1: False  # this is a C2 model
+    NUM_GROUPS: 32
+    WIDTH_PER_GROUP: 8
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: CascadeROIHeads
+  ROI_BOX_HEAD:
+    CLS_AGNOSTIC_BBOX_REG: True
+  RPN:
+    POST_NMS_TOPK_TRAIN: 2000
+DATASETS:
+  TRAIN: ("coco_2017_train",)
+  TEST: ("coco_2017_val", ) #"lvis_v0.5_val_cocofied")
+SOLVER:
+  IMS_PER_BATCH: 16
+  BASE_LR: 0.02
+  STEPS: (210000, 250000)
+  MAX_ITER: 270000
+OUTPUT_DIR: "output/DCT_casecade_RX101_3x_mask128x128_300_l1_007_4conv.yaml"
