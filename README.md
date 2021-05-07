@@ -41,7 +41,7 @@ The codes of this project is on projects/DCT_Mask/
 ### Trained models on COCO
 Model |  Backbone | Schedule | Multi-scale training | Inference time (s/im) | AP (minival) | Link
 --- |:---:|:---:|:---:|:---:|:---:|:---:
-DCT-Mask R-CNN | R50 | 1x | Yes |   0.0465 | 36.5  | [download(Fetch code: xuqk)](https://pan.baidu.com/s/18zjPxYCoSt-FuyEnZasUag)
+DCT-Mask R-CNN | R50 | 1x | Yes |   0.0465 | 36.5  | [download(Fetch code: xpdm)](https://pan.baidu.com/s/1p1OK9KU3ojVwM0gj8nqkPw)
 DCT-Mask R-CNN | R101 | 3x | Yes |   0.0595 | 39.9  | [download(Fetch code: 7q6x)](https://pan.baidu.com/s/19IYgrUXi4o_gTNl8MzGIOA)
 DCT-Mask R-CNN | RX101 | 3x | Yes |   0.1049 | 41.2  | [download(Fetch code: ufw2)](https://pan.baidu.com/s/149NL1S4AfJJSRSki3bVpGw)
 Casecade DCT-Mask R-CNN | R50  | 1x | Yes |   0.0630 | 37.5  | [download(Fetch code: yqxp)](https://pan.baidu.com/s/1U9AF8bP5FTWYqBGVrt5HmA)
