@@ -41,18 +41,18 @@ The codes of this project is on projects/DCT_Mask/
 ### Trained models on COCO
 Model |  Backbone | Schedule | Multi-scale training | Inference time (s/im) | AP (minival) | Link
 --- |:---:|:---:|:---:|:---:|:---:|:---:
-DCT-Mask R-CNN | R50 | 1x | Yes |   0.0465 | 36.5  | [download](https://)
-DCT-Mask R-CNN | R101 | 3x | Yes |   0.0595 | 39.9  | [download](https://)
-DCT-Mask R-CNN | RX101 | 3x | Yes |   0.1049 | 41.2  | [download](https://)
-Casecade DCT-Mask R-CNN | R50  | 1x | Yes |   0.0630 | 37.5  | [download](https://)
-Casecade DCT-Mask R-CNN | R101  | 3x | Yes |   0.0750 | 40.8  | [download](https://)
-Casecade DCT-Mask R-CNN | RX101  | 3x | Yes |   0.1195 | 42.0  | [download](https://)
+DCT-Mask R-CNN | R50 | 1x | Yes |   0.0465 | 36.5  | [download(Fetch code: xuqk)](https://pan.baidu.com/s/18zjPxYCoSt-FuyEnZasUag)
+DCT-Mask R-CNN | R101 | 3x | Yes |   0.0595 | 39.9  | [download(Fetch code: 7q6x)](https://pan.baidu.com/s/19IYgrUXi4o_gTNl8MzGIOA)
+DCT-Mask R-CNN | RX101 | 3x | Yes |   0.1049 | 41.2  | [download(Fetch code: ufw2)](https://pan.baidu.com/s/149NL1S4AfJJSRSki3bVpGw)
+Casecade DCT-Mask R-CNN | R50  | 1x | Yes |   0.0630 | 37.5  | [download(Fetch code: yqxp)](https://pan.baidu.com/s/1U9AF8bP5FTWYqBGVrt5HmA)
+Casecade DCT-Mask R-CNN | R101  | 3x | Yes |   0.0750 | 40.8  | [download(Fetch code: r8xv)](https://pan.baidu.com/s/11UQ1Zot7M5FqK1DIa-HOHA)
+Casecade DCT-Mask R-CNN | RX101  | 3x | Yes |   0.1195 | 42.0  | [download(Fetch code: pdej)](https://pan.baidu.com/s/1xaChv_C-YRxkxY6gjumHOw)
 
 ### Trained models on Cityscapes
 Model |Data|  Backbone | Schedule | Multi-scale training | AP (val) | Link
 --- |:---:|:---:|:---:|:---:|:---:|:---:
-DCT-Mask R-CNN | Fine-Only | R50 | 1x | Yes | 37.0  | [download](https://)
-DCT-Mask R-CNN | CoCo-Pretrain +Fine | R50 | 1x | Yes | 39.6  | [download](https://)
+DCT-Mask R-CNN | Fine-Only | R50 | 1x | Yes | 37.0  | [download(Fetch code: dn7i)](https://pan.baidu.com/s/1vcDVv8NbOm3OV8_2fsf-DQ)
+DCT-Mask R-CNN | CoCo-Pretrain +Fine | R50 | 1x | Yes | 39.6  | [download(Fetch code: ntqf)](https://pan.baidu.com/s/1dVcSwP2PG_6jZYgVMbWT0w)
 
 #### Notes
 - We observe about 0.2 AP noise in COCO.
